@@ -86,13 +86,18 @@
     @include transition(all .25s cubic-bezier(.02,.01,.47,1));
   }
 }
-
+.razdel{
+  height: 280px !important;
+}
 .m-article-card__picture {
   position: relative;
   height: 200px;
   border-radius: 10px 10px 0 0;
   background-color: var(--secondary-subtle-color);
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
 
   @include respond-to('medium') {
     height: 220px;

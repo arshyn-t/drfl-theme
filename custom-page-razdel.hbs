@@ -1,0 +1,151 @@
+{{!--
+This template was used for the authors page.
+I edited it to use with tags, which we call sections in our project.
+--}}
+
+{{!-- This block preloads specific assets for the author page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the author page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
+{{/contentFor}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{!< default}}
+
+{{#post}}
+  <div class="main-wrap">
+    {{!-- Special header.hbs partial to generate the <header> tag --}}
+    {{> header background=feature_image}}
+    {{!-- Inject styles of the hero image to make it responsive --}}
+    {{> hero background=feature_image}}
+    <div class="m-hero__content" data-aos="fade-down">
+      <h1 class="m-hero-title bigger">{{title}}</h1>
+      {{#if custom_excerpt}}
+        <p class="m-hero-description">{{custom_excerpt}}</p>
+      {{/if}}
+    </div>
+    </section>
+    <main>
+      <div class="l-content">
+        <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+          <h2>Цифровая приватность</h2>
+          {{#get 'tags' limit='all' include='count.posts' order='id' filter="slug:[personal-data-protection]"}}
+            <div class="l-grid">
+              {{#foreach tags}}
+                <article class="m-article-card razdel">
+                  {{#if feature_image}}
+                    <div class="m-article-card__picture lozad" style="background-image: url({{img_url feature_image size="m"}});">
+                  {{else}}
+                    <div class="m-article-card__picture lozad" style="background-image: url({{asset "images/no-image.png"}});">
+                  {{/if}}
+                  <a href="{{url}}" class="m-article-card__picture-link" aria-label="Tag"></a>
+                  <h3 class="m-article-card__name">{{name}}</h3>
+                  </div>
+                  {{!--removed div with class "m-article-card__info"
+                  
+                  --}}
+                  {{!--added this div with stats from "m-article-card__info" --}}
+                  <div class="m-article-card__author-stats">
+                      <span>
+                        {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+                      </span>
+                  </div>
+                  {{!--/--}}
+                </article>
+              {{/foreach}}
+            </div>
+          {{/get}}
+
+          <h2>Свободный Интернет</h2>
+          {{#get 'tags' limit='all' include='count.posts' order='id' filter="slug:[svoboda-vyrazhieniia-mnieniia-onlain,content-censorship,svoboda-mirnykh-sobranii-onlain]"}}
+            <div class="l-grid centered">
+              {{#foreach tags}}
+                <article class="m-article-card razdel">
+                  {{#if feature_image}}
+                    <div class="m-article-card__picture lozad" style="background-image: url({{img_url feature_image size="m"}});">
+                  {{else}}
+                    <div class="m-article-card__picture lozad" style="background-image: url({{asset "images/no-image.png"}});">
+                  {{/if}}
+                  <a href="{{url}}" class="m-article-card__picture-link" aria-label="Tag"></a>
+                  <h3 class="m-article-card__name">{{name}}</h3>
+                  </div>
+                  {{!--removed div with class "m-article-card__info"
+                  
+                  --}}
+                  {{!--added this div with stats from "m-article-card__info" --}}
+                  <div class="m-article-card__author-stats">
+                      <span>
+                        {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+                      </span>
+                  </div>
+                  {{!--/--}}
+                </article>
+              {{/foreach}}
+            </div>
+          {{/get}}
+          <h2>Новые вызовы</h2>
+          {{#get 'tags' limit='all' include='count.posts' order='id' filter="slug:[new-chalenges-business-and-human-rights]"}}
+            <div class="l-grid left">
+              {{#foreach tags}}
+                <article class="m-article-card razdel">
+                  {{#if feature_image}}
+                    <div class="m-article-card__picture lozad" style="background-image: url({{img_url feature_image size="m"}});">
+                  {{else}}
+                    <div class="m-article-card__picture lozad" style="background-image: url({{asset "images/no-image.png"}});">
+                  {{/if}}
+                  <a href="{{url}}" class="m-article-card__picture-link" aria-label="Tag"></a>
+                  <h3 class="m-article-card__name">{{name}}</h3>
+                  </div>
+                  {{!--removed div with class "m-article-card__info"
+                  
+                  --}}
+                  {{!--added this div with stats from "m-article-card__info" --}}
+                  <div class="m-article-card__author-stats">
+                      <span>
+                        {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+                      </span>
+                  </div>
+                  {{!--/--}}
+                </article>
+              {{/foreach}}
+            </div>
+          {{/get}}
+
+          {{!--Разделы Электронное участие, Право на справедливое судебное разбирательство онлайн--}}
+          <h2>Другие разделы</h2>
+          {{#get 'tags' limit='all' include='count.posts' order='id' filter="slug:[elektronnoye-uchastiye,right-to-fair-trial-online,access-to-information]"}}
+            <div class="l-grid centered">
+              {{#foreach tags}}
+                <article class="m-article-card razdel">
+                  {{#if feature_image}}
+                    <div class="m-article-card__picture lozad" style="background-image: url({{img_url feature_image size="m"}});">
+                  {{else}}
+                    <div class="m-article-card__picture lozad" style="background-image: url({{asset "images/no-image.png"}});">
+                  {{/if}}
+                  <a href="{{url}}" class="m-article-card__picture-link" aria-label="Tag"></a>
+                  <h3 class="m-article-card__name">{{name}}</h3>
+                  </div>
+                  {{!--removed div with class "m-article-card__info"
+                  
+                  --}}
+                  {{!--added this div with stats from "m-article-card__info" --}}
+                  <div class="m-article-card__author-stats">
+                      <span>
+                        {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+                      </span>
+                  </div>
+                  {{!--/--}}
+                </article>
+              {{/foreach}}
+            </div>
+          {{/get}}
+        </div>
+      </div>
+    </main>
+  </div>
+{{/post}}

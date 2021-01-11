@@ -2,8 +2,6 @@
   padding-bottom: 20px;
 
   @include respond-to('medium') {
-    display: flex;
-    flex-wrap: wrap;
     margin: 0 -10px;
   }
 
@@ -14,6 +12,8 @@
   &.centered {
     @include respond-to('medium') {
       justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 }
