@@ -33,7 +33,7 @@ into the {body} of the default.hbs template --}}
     <main>
       <div class="l-content">
         <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-          <h2>Цифровая приватность</h2>
+          <h2>{{t "digital privacy"}}</h2>
           {{#get 'tags' limit='all' include='count.posts' order='id' filter="slug:[personal-data-protection]"}}
             <div class="l-grid">
               {{#foreach tags}}
@@ -61,7 +61,7 @@ into the {body} of the default.hbs template --}}
             </div>
           {{/get}}
 
-          <h2>Свободный Интернет</h2>
+          <h2>{{t "free internet"}}</h2>
           {{#get 'tags' limit='all' include='count.posts' order='id' filter="slug:[svoboda-vyrazhieniia-mnieniia-onlain,content-censorship,svoboda-mirnykh-sobranii-onlain]"}}
             <div class="l-grid centered">
               {{#foreach tags}}
@@ -88,7 +88,7 @@ into the {body} of the default.hbs template --}}
               {{/foreach}}
             </div>
           {{/get}}
-          <h2>Новые вызовы</h2>
+          <h2>{{t "new challenges"}}</h2>
           {{#get 'tags' limit='all' include='count.posts' order='id' filter="slug:[new-chalenges-business-and-human-rights]"}}
             <div class="l-grid left">
               {{#foreach tags}}
@@ -117,7 +117,7 @@ into the {body} of the default.hbs template --}}
           {{/get}}
 
           {{!--Разделы Электронное участие, Право на справедливое судебное разбирательство онлайн--}}
-          <h2>Другие разделы</h2>
+          <h2>{{t "other sections"}}</h2>
           {{#get 'tags' limit='all' include='count.posts' order='id' filter="slug:[elektronnoye-uchastiye,right-to-fair-trial-online,access-to-information]"}}
             <div class="l-grid centered">
               {{#foreach tags}}

@@ -1,7 +1,13 @@
 .m-comments {
   padding-top: 40px;
+  display: flex;
+  justify-content: center;
 
   @include respond-to('medium') {
     padding-top: 60px;
   }
+}
+.custom-bg {
+  background-color: #f5f6f7;
+  border-radius: 10px;
 }
