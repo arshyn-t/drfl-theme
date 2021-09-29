@@ -19,7 +19,6 @@ It can be used also as the home page or the default page.
 {{!-- The tag below means: insert everything in this file
 into the {body} of the default.hbs template --}}
 {{!< default}}
-
 {{!-- Special header.hbs partial to generate the <header> tag --}}
 {{> header background=@site.cover_image}}
 
@@ -38,6 +37,13 @@ into the {body} of the default.hbs template --}}
       <a href="{{@site.url}}/newsletter" class="m-button filled">{{t "Subscribe"}}</a>
     {{/if}}
   </div>
+
+   <!--  banner link to digital rights matter start -->
+  <a href="https://digital-rights-matter.drfl.kz" class="link-to-drm">
+    <img src="https://firebasestorage.googleapis.com/v0/b/digital-rights-matter-6e84f.appspot.com/o/Group%20112.svg?alt=media&token=e70971f9-9b16-4648-bfa2-2dd44fcd3c95" alt="banner to digital rights matter">
+  </a>
+  <!-- banner link to digital rights matter end -->
+  
   </section>
   <div class="l-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
